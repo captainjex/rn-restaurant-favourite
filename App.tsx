@@ -3,33 +3,33 @@ import { StyleSheet, Text, View, Button, Alert, StatusBar, TextInput, ActivityIn
 import axios from 'axios'
 
 import RestaurantList from './components/RestaurantList'
+import RestaurantDetail from './components/RestaurantDetail'
 import Header from './components/Header'
 
 export default class App extends React.Component {
   state = {
     query: '',
     restaurants: [],
-    isLoading: false,
-    restaurantId: null
+    isLoading: false
   }
 
   componentDidMount() {
     this.getData()
   }
 
-  getData = async () => {
-    try {
-      this.setState({
-        isLoading: true
-      })
-      let { data: { restaurants } } = await axios.get(`https://developers.zomato.com/api/v2.1/search?q=${this.state.query}`, {
-        headers: {
-          'user-key': '026e5a9f7e29e3051efab94483074ea1'
-        },
-        params: {
-          count: 10
-        }
-      })
+  getData = () => {
+    this.setState({
+      isLoading: true
+    })
+    axios.get(`https://developers.zomato.com/api/v2.1/search?q=${this.state.query}`, {
+      headers: {
+        'user-key': '026e5a9f7e29e3051efab94483074ea1'
+      },
+      params: {
+        count: 10
+      }
+    }).then(response => {
+      let { restaurants } = response.data
       restaurants = restaurants.map((item:any) => {
         const { restaurant } = item
         return {
@@ -42,20 +42,12 @@ export default class App extends React.Component {
         restaurants,
         isLoading: false
       })
-    } catch (error) {
+    }).catch(error => {
       console.log(error)
-    }
+    })
   }
 
   render() {
-
-    if (this.state.restaurantId) {
-      return (
-        <View>
-
-        </View>
-      )
-    }
     return (
       <View style={styles.container}>
         <Header></Header>
@@ -82,4 +74,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: StatusBar.currentHeight
   }
-});
+})
