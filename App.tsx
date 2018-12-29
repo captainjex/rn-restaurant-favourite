@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert, StatusBar, TextInput, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Button, StatusBar, TextInput, ActivityIndicator } from 'react-native';
 import axios from 'axios'
 
-import RestaurantList from './components/RestaurantList'
-import RestaurantDetail from './components/RestaurantDetail'
-import Header from './components/Header'
+import RestaurantList from './src/components/RestaurantList'
+import RestaurantDetail from './src/components/RestaurantDetail'
+import Header from './src/components/Header'
 
 export default class App extends React.Component {
   state = {
