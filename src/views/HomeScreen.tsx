@@ -5,7 +5,7 @@ import RestaurantList from '../components/RestaurantList';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Restaurant App',
+    title: 'Restaurant App'
   };
   state = {
     query: '',
@@ -56,7 +56,7 @@ export default class HomeScreen extends React.Component {
             placeholder="Cari Resto..."
             onChangeText={(query) => this.setState({ query })}
           />
-          <Button title="search" onPress={() => this.getData()}></Button>
+          <Button color="#fcb119" title="go" onPress={() => this.getData()}></Button>
         </View>
         {this.state.isLoading &&
           <ActivityIndicator size="large" style={{ justifyContent: 'center', height: 80 }} />
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   box: {
-    elevation: 3,
+    elevation: 2,
     borderRadius: 10,
     margin: 12,
     padding: 10
