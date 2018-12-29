@@ -10,7 +10,7 @@ export default class RestaurantDetail extends React.Component<Props> {
     const { id } = this.props
     return (
       <View>
-        <Text>{id}</Text>
+        <Text>{id} lalala </Text>
       </View>
     )
   }

@@ -16,6 +16,7 @@ export default class RestaurantList extends React.Component<Props> {
           {items.map((restaurant: any) => {
             return <RestaurantItem
               key={restaurant.id}
+              id={restaurant.id}
               name={restaurant.name}
               address={restaurant.address}/>
           })}
