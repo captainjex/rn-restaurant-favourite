@@ -23,7 +23,7 @@ export default class RestaurantItem extends React.Component<RestaurantItemProps,
     return (
       <TouchableOpacity onPress={this.setFavourite}>
         <View style={styles.restaurantItem}>
-          <Text style={{ ...styles.name, color: this.state.isFavourite ? '#ef2917' : null}}>{name}</Text>
+          <Text style={{ ...styles.name, color: this.state.isFavourite ? '#ef2917' : undefined}}>{name}</Text>
           <Text style={styles.address}>{address}</Text>
         </View>
       </TouchableOpacity>
