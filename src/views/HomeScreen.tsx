@@ -52,8 +52,8 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.box}>
           <TextInput
-            style={{ height: 40 }}
-            placeholder="Cari Tempat..."
+            style={{ height: 48, padding: 6 }}
+            placeholder="Cari Resto..."
             onChangeText={(query) => this.setState({ query })}
           />
           <Button title="search" onPress={() => this.getData()}></Button>
