@@ -57,8 +57,6 @@ export default class HomeScreen extends React.Component {
             onChangeText={(query) => this.setState({ query })}
           />
           <Button title="search" onPress={() => this.getData()}></Button>
-          {/* <View style={styles.box}>
-          </View> */}
         </View>
         {this.state.isLoading &&
           <ActivityIndicator size="large" style={{ justifyContent: 'center', height: 80 }} />
