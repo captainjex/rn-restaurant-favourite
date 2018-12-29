@@ -38,8 +38,6 @@ export default class App extends React.Component {
           address: restaurant.location.address
         }
       })
-      console.log(restaurants)
-      // TODO: bikin set state
       this.setState({
         restaurants,
         isLoading: false
